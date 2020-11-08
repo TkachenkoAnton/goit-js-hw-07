@@ -1,8 +1,8 @@
 // const quantityOfCategoryItem = document.querySelector('#categories').children.length;
 
-const quantityOfCategoryItem = document.querySelector('ul#categories').childElementCount;
+const category = document.querySelector('#categories');
 
-console.log(`В списке ${quantityOfCategoryItem} категории`)
+console.log(`В списке ${category.childElementCount} категории`)
 
 // const categoryItem = document.querySelectorAll('h2');
 
