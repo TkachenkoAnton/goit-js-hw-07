@@ -4,10 +4,8 @@ const category = document.querySelector('#categories');
 
 console.log(`В списке ${category.childElementCount} категории`)
 
-const categoryItemTitles = document.querySelectorAll('h2');
+const categoryItem = document.querySelectorAll('.item');
 
-const getItemTitle = categoryItemTitles.forEach(({ textContent }) => console.log(`Категория: ${textContent}\nКоличество элементов:`));
-
-const 
-
+const getItem = categoryItem.forEach(item =>
+console.log(`Категория: ${item.children[0].textContent}\nКоличество элементов: ${item.children[1].childElementCount}`));
 
