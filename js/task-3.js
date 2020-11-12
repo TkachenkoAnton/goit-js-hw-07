@@ -19,10 +19,6 @@ const images = [
 const galleryRef = document.querySelector('#gallery');
 
 galleryRef.insertAdjacentHTML('beforeend',
-    `<li><img src="${images[0].url}" alt="${images[0].alt}"></li> 
-     <li><img src="${images[1].url}" alt="${images[1].alt}"></li>
-     <li><img src="${images[2].url}" alt="${images[2].alt}"></li>`);
+    images.map(img => `<li><img class="gallery__img" src="${img.url}" alt="${img.alt}"></li>`).join(""));
 
-const imageRef = document.querySelectorAll('#gallery li img');
-
-imageRef.classList.add('ph');
+galleryRef.classList.add('gallery__list');
