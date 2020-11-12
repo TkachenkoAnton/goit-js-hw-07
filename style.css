@@ -1,0 +1,9 @@
+.gallery__list {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+}
+
+.gallery__img {
+  width: 100%;
+}
