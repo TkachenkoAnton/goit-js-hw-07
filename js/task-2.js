@@ -30,8 +30,9 @@ const ingredientsArr = ingredients.map((item) => {
 
   ingredientsLi.textContent = item;
 
-  return ingredientsLi;
+  ingredientsRef.append(ingredientsLi)
+
+  return ingredientsRef;
 
 });
 
-ingredientsArr.forEach(item => ingredientsRef.append(item));
