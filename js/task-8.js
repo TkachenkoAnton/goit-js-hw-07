@@ -10,7 +10,7 @@ let inputCurrentValue = '';
 
 const getCurrentValue = () => inputCurrentValue = inputRef.valueAsNumber;
 
-const randColor = function () {
+const randColor = () => {
     const r = Math.floor(Math.random() * (256));
     const g = Math.floor(Math.random() * (256));
     const b = Math.floor(Math.random() * (256));
@@ -23,16 +23,12 @@ const createBoxes = (amount) => {
         boxesRef.insertAdjacentHTML('beforeend', `<div>${i + 1}</div>`);
     };
 
-    const divStyle = document.querySelector('#boxes div');
-    divStyle.style.width = `30px`;
-    divStyle.style.height = `30px`;
-
     const divStyleAll = document.querySelectorAll('#boxes div');
 
-    divStyleAll.forEach(item => {
+    divStyleAll.forEach((item, i) => {
         item.style.backgroundColor = randColor();
-        // item.style.width = (() => `${30 + 10}px`);
-        // item.style.height = `30px`;
+        item.style.width = `${30 + i * 10}px`;
+        item.style.height = `${30 + i * 10}px`;
     });
 };
 

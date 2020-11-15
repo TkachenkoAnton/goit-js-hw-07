@@ -9,17 +9,6 @@
 </head>
 
 <body>
-  <div id="controls">
-    <input type="number" min="0" max="100" step="1" />
-    <button type="button" data-action="render">Создать</button>
-    <button type="button" data-action="destroy">Очистить</button>
-  </div>
-
-  <div id="boxes"></div>
-
-  <br />
-  <br />
-
   <ul id="categories">
     <li class="item">
       <h2>Животные</h2>
@@ -67,12 +56,24 @@
   <h1>Кто, <span id="name-output">незнакомец</span>?!</h1>
 
   <input type="text" id="validation-input" data-length="6" placeholder="Введи 6 символов" />
+
   <br />
   <br />
 
   <input id="font-size-control" type="range" />
   <br />
   <span id="text" class="inp">Абракадабра!</span>
+
+  <br />
+  <br />
+
+  <div id="controls">
+    <input type="number" min="0" max="100" step="1" />
+    <button type="button" data-action="render">Создать</button>
+    <button type="button" data-action="destroy">Очистить</button>
+  </div>
+
+  <div id="boxes"></div>
 
   <script src="./js/task-1.js" type="module"></script>
   <script src="./js/task-2.js" type="module"></script>
