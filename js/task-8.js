@@ -20,16 +20,19 @@ const randColor = function () {
 const createBoxes = (amount) => {
     
     for (let i = 0; i < amount; i += 1) {
-                
         boxesRef.insertAdjacentHTML('beforeend', `<div>${i + 1}</div>`);
     };
+
+    const divStyle = document.querySelector('#boxes div');
+    divStyle.style.width = `30px`;
+    divStyle.style.height = `30px`;
 
     const divStyleAll = document.querySelectorAll('#boxes div');
 
     divStyleAll.forEach(item => {
         item.style.backgroundColor = randColor();
-        item.style.width = `30px`;
-        item.style.height = `30px`;
+        // item.style.width = (() => `${30 + 10}px`);
+        // item.style.height = `30px`;
     });
 };
 
