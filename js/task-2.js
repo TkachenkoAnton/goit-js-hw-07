@@ -25,8 +25,13 @@ const ingredientsRef = document.querySelector('#ingredients');
 // ingredientsRef.append(li1, li2, li3, li4, li5, li6);
 
 const ingredientsArr = ingredients.map((item) => {
+
   const ingredientsLi = document.createElement('li');
+
   ingredientsLi.textContent = item;
+
   return ingredientsLi;
-})
+
+});
+
 ingredientsArr.forEach(item => ingredientsRef.append(item));
