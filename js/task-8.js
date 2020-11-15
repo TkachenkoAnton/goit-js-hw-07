@@ -6,16 +6,24 @@ const buttonDestroyRef = document.querySelector('button[data-action="destroy"]')
 
 const boxesRef = document.querySelector('#boxes');
 
-const inputValue = inputRef.valueAsNumber;
+let inputCurrentValue = '';
+
+const getCurrentValue = () => inputCurrentValue = inputRef.valueAsNumber;
 
 const createBoxes = (amount) => {
-    [...boxesRef.children].map(item => {
-            const div = document.createElement('div');
-            div.innerHTML = item;
-            boxesRef.append(div);
-    });
+
+    for (let i = 0; i < amount; i += 1) {
+        const divCreate = document.createElement('div');
+        divCreate.append(i + 1);
+        boxesRef.append(divCreate);    
+    };
 };
 
-const destroyBoxes = () => { };
+const destroyBoxes = () => {
+    const divDestroy = document.querySelectorAll('#boxes div');
+    divDestroy.forEach(item => item.remove());
+};
 
-buttonRenderRef.addEventListener('click', () => createBoxes(inputValue))
+buttonRenderRef.addEventListener('click', () => { getCurrentValue(); createBoxes(inputCurrentValue) });
+
+buttonDestroyRef.addEventListener('click', () => destroyBoxes());
