@@ -10,24 +10,27 @@ let inputCurrentValue = '';
 
 const getCurrentValue = () => inputCurrentValue = inputRef.valueAsNumber;
 
+const randColor = function () {
+    const r = Math.floor(Math.random() * (256));
+    const g = Math.floor(Math.random() * (256));
+    const b = Math.floor(Math.random() * (256));
+    return '#' + r.toString(16) + g.toString(16) + b.toString(16);
+}
+
 const createBoxes = (amount) => {
     
     for (let i = 0; i < amount; i += 1) {
+                
         boxesRef.insertAdjacentHTML('beforeend', `<div>${i + 1}</div>`);
-
-        // const divStyleAll = document.querySelector('#boxes').children;
-        //     divStyleAll[0].style.backgroundColor = 'grey';
-        //     divStyleAll[0].style.width = `30px`;
-        //     divStyleAll[0].style.height = `30px`;
-
-        // [...divStyleAll].forEach(item => {
-        //     item.style.backgroundColor = 'grey';
-        //     item.style.width = `${divStyleAll[0].clientWidth + 10}px`;
-        //     item.style.height = `30px`;
-        //     console.log(divStyleAll)
-        // });
     };
 
+    const divStyleAll = document.querySelectorAll('#boxes div');
+
+    divStyleAll.forEach(item => {
+        item.style.backgroundColor = randColor();
+        item.style.width = `30px`;
+        item.style.height = `30px`;
+    });
 };
 
 const destroyBoxes = () => {
