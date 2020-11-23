@@ -9,6 +9,8 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector('#ingredients');
 
+// ===== Вариант 1 =====
+
 // const li1 = document.createElement('li');
 // li1.textContent = ingredients[0];
 // const li2 = document.createElement('li');
@@ -24,15 +26,17 @@ const ingredientsRef = document.querySelector('#ingredients');
 
 // ingredientsRef.append(li1, li2, li3, li4, li5, li6);
 
+// ===== Вариант 2 =====
+
 const ingredientsArr = ingredients.map((item) => {
 
   const ingredientsLi = document.createElement('li');
 
   ingredientsLi.textContent = item;
 
-  ingredientsRef.append(ingredientsLi)
-
-  return ingredientsRef;
+  return ingredientsLi;
 
 });
+
+ingredientsRef.append(...ingredientsArr);
 
