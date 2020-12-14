@@ -28,15 +28,12 @@ const ingredientsRef = document.querySelector('#ingredients');
 
 // ===== Вариант 2 =====
 
-const ingredientsArr = ingredients.map((item) => {
-
+const ingredientsArr = ingredients.map(item => {
   const ingredientsLi = document.createElement('li');
 
   ingredientsLi.textContent = item;
 
   return ingredientsLi;
-
 });
 
 ingredientsRef.append(...ingredientsArr);
-
